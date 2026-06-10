@@ -1,4 +1,4 @@
-# ENSAJ FL — Federated Learning Platform
+# Federated Learning Platform
 
 Academic prototype Federated Learning system for binary health risk assessment. Combines Flower, PyTorch, SHAP, AI audit, admin dashboard, and authenticated client portal.
 
