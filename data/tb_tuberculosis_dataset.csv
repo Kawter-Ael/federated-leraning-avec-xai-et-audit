@@ -1,0 +1,251 @@
+name,age,sex,cough_duration_weeks,fever,night_sweats,weight_loss,fatigue,hiv,smoking,tb_contact,chest_xray,sputum_test,tb_label
+Amina El Amrani,36,M,3,0,0,0,1,0,0,0,0,0,0
+Youssef Saidi,26,F,3,1,1,0,0,1,1,1,0,1,1
+Nadia Bennani,12,F,1,1,1,1,0,1,0,1,0,0,1
+Ilyas Berrada,47,M,11,0,0,0,1,0,0,0,0,0,0
+Rachid Zahra,48,F,3,1,0,0,0,0,1,1,0,1,1
+Tariq Kettani,42,M,3,0,1,1,1,0,0,1,0,0,1
+Layla Zahra,34,M,3,1,1,1,1,0,0,1,0,0,1
+Amina Zahra,81,M,12,1,0,1,1,1,1,0,1,0,1
+Tariq El Ouahabi,35,F,1,1,1,0,1,0,1,0,1,0,1
+Imane Berrada,82,M,2,1,0,0,1,1,0,0,2,1,1
+Imane Kettani,8,M,9,0,0,1,0,0,0,1,2,0,1
+Hiba Berrada,78,F,3,0,1,1,1,1,1,0,0,0,1
+Youssef Najjar,71,M,9,0,0,0,0,0,0,0,2,0,1
+Zineb Alaoui,63,M,8,0,1,0,1,1,0,0,0,0,1
+Yasin Cherkaoui,60,M,10,0,0,1,1,0,0,0,0,0,1
+Yasin Zahra,36,F,3,0,1,0,0,0,0,0,0,0,0
+Khalid Berrada,52,M,2,1,0,1,1,1,1,1,1,1,1
+Tariq Benali,63,M,3,1,0,0,0,1,0,0,1,0,1
+Hiba Zahra,8,M,2,0,0,0,1,0,0,0,1,0,0
+Mariam Najjar,67,F,4,0,1,0,1,1,0,1,0,1,1
+Omar El Amrani,59,M,1,0,1,0,1,0,0,1,0,0,0
+Tariq Idrissi,39,M,10,1,0,0,1,0,0,0,0,1,1
+Nadia Kettani,82,F,8,1,1,0,0,1,1,0,0,1,1
+Mehdi Zahra,57,F,8,0,0,0,0,0,1,0,0,0,0
+Rachid El Ouahabi,6,F,3,0,0,1,1,0,0,0,2,1,1
+Yasin El Amrani,23,F,12,1,0,1,0,0,1,0,2,0,1
+Layla Bouaziz,40,M,3,0,0,1,1,1,0,1,0,0,1
+Tariq Bouaziz,4,M,4,0,1,0,0,1,1,1,0,1,1
+Amina Cherkaoui,74,M,4,0,1,0,0,1,1,0,2,1,1
+Ilyas Bouaziz,85,M,11,1,1,1,1,1,1,0,0,1,1
+Salma Benali,23,F,6,0,1,1,0,1,1,1,0,1,1
+Hiba El Fassi,22,M,4,1,0,0,1,0,0,0,0,0,0
+Anas Najjar,10,F,6,0,1,1,1,0,0,0,2,1,1
+Amina El Ouahabi,55,M,2,1,0,0,0,1,0,1,1,1,1
+Ilyas Bouaziz,57,F,8,1,0,1,1,1,0,1,1,0,1
+Zineb Alaoui,57,M,11,1,0,1,1,1,0,0,0,0,1
+Hassan Idrissi,28,M,6,1,1,1,1,0,0,1,0,1,1
+Youssef Berrada,74,F,7,0,1,1,1,1,0,1,0,0,1
+Youssef Cherkaoui,44,F,11,0,1,0,0,1,0,0,1,0,1
+Layla Zahra,7,F,6,1,0,1,1,1,1,1,1,1,1
+Mehdi Berrada,11,F,0,0,1,0,0,0,0,0,0,0,0
+Hassan Kettani,17,F,10,0,0,1,1,1,0,0,1,0,1
+Imane Bennani,75,M,4,1,1,0,0,0,0,1,2,1,1
+Amina El Ouahabi,73,M,5,1,1,0,1,0,1,1,0,1,1
+Layla Idrissi,20,F,2,1,1,1,1,1,1,0,2,0,1
+Layla Kettani,60,F,5,0,1,1,0,1,0,1,1,0,1
+Ilyas Idrissi,36,M,8,0,0,0,1,1,0,1,1,0,1
+Youssef Bennani,38,M,6,0,1,1,1,1,1,1,0,0,1
+Imane Alaoui,30,M,11,0,1,0,0,0,0,1,0,0,1
+Hiba Najjar,37,M,3,1,0,1,0,1,0,0,0,1,1
+Tariq Alaoui,17,F,1,0,1,1,1,1,1,0,2,0,1
+Anas Bennani,9,F,7,0,0,0,0,1,0,0,0,1,1
+Ilyas Najjar,80,M,12,1,1,1,1,1,1,0,1,1,1
+Khalid Benali,28,F,10,0,0,0,0,0,0,0,0,1,0
+Anas Alaoui,5,M,4,1,1,0,0,1,0,1,0,0,1
+Hassan Alaoui,19,M,0,0,1,1,1,0,1,1,1,1,1
+Hiba Saidi,64,F,1,0,1,1,1,0,0,0,2,1,1
+Mariam Najjar,3,F,9,0,0,1,1,1,0,1,1,0,1
+Omar El Fassi,45,F,5,1,0,0,1,1,1,1,1,0,1
+Tariq El Amrani,59,M,5,1,1,0,1,0,1,1,0,0,1
+Ilyas El Ouahabi,64,F,12,0,0,1,0,1,1,1,0,1,1
+Ilyas El Ouahabi,31,M,4,0,1,0,0,0,1,0,1,0,0
+Imane Saidi,35,F,7,1,0,1,0,1,0,0,2,0,1
+Yasin Bouaziz,65,F,0,1,1,1,0,1,1,1,0,1,1
+Salma El Fassi,42,M,11,0,1,0,1,0,1,1,1,1,1
+Salma Benali,84,M,7,0,0,1,0,1,0,1,0,0,1
+Hassan Bennani,61,F,5,1,0,1,1,1,1,0,1,0,1
+Imane Kettani,12,F,1,0,1,0,1,0,0,1,1,0,1
+Rachid Cherkaoui,19,M,8,1,0,0,0,0,1,0,0,0,0
+Zineb El Fassi,82,F,7,1,0,1,1,0,0,1,2,1,1
+Imane Benali,55,F,7,1,0,1,1,0,0,1,1,0,1
+Imane El Amrani,85,F,4,0,0,1,1,0,1,0,1,1,1
+Hassan Benali,13,M,4,1,0,1,0,0,1,1,1,0,1
+Hassan El Ouahabi,70,F,8,1,0,1,1,1,1,0,0,0,1
+Zineb Berrada,51,F,1,1,0,1,0,1,1,1,1,1,1
+Rachid Bennani,30,F,0,1,0,0,1,1,1,0,0,1,1
+Imane El Fassi,15,M,3,0,1,1,1,1,0,1,1,1,1
+Ilyas Cherkaoui,36,M,11,1,0,1,1,0,1,0,2,0,1
+Rachid El Amrani,51,F,3,0,1,0,0,0,0,1,0,0,0
+Mariam Kettani,9,M,9,0,0,1,0,0,1,0,2,0,1
+Fatima Bennani,85,M,2,0,1,0,1,0,0,1,0,1,1
+Hiba Bennani,9,F,7,1,0,1,0,0,1,1,1,0,1
+Anas Berrada,52,F,10,0,1,1,0,0,1,0,0,0,1
+Mariam Saidi,42,F,9,1,1,1,0,0,0,1,0,0,1
+Nadia Berrada,59,F,6,0,1,1,1,1,1,0,1,0,1
+Omar Berrada,11,M,6,0,1,0,0,1,0,1,0,1,1
+Yasin Berrada,7,F,9,1,1,0,0,0,1,0,2,0,1
+Tariq Bouaziz,15,F,9,0,1,0,1,0,0,1,1,0,1
+Nadia Bouaziz,1,M,2,1,0,0,0,0,0,1,0,0,0
+Rachid Alaoui,42,M,0,0,0,0,0,1,1,1,0,0,0
+Mehdi Kettani,66,M,5,1,0,1,1,1,0,0,0,0,1
+Youssef Kettani,39,M,12,0,1,1,1,0,0,1,1,0,1
+Salma Saidi,30,F,1,1,0,1,0,1,0,1,1,0,1
+Yasin Alaoui,15,F,0,1,0,1,1,0,1,0,0,0,0
+Hiba Bennani,51,F,11,1,0,1,0,0,0,0,2,0,1
+Hassan Kettani,14,M,4,0,0,0,0,0,1,1,1,1,1
+Layla Benali,73,F,10,1,0,1,0,1,1,1,1,0,1
+Rachid Saidi,10,F,7,1,0,0,1,1,0,0,1,0,1
+Layla Najjar,71,M,7,0,1,1,0,0,1,0,2,1,1
+Omar Saidi,83,M,0,0,1,1,0,1,1,1,0,1,1
+Ilyas El Amrani,81,F,1,1,0,1,1,1,0,1,0,1,1
+Rachid Alaoui,84,F,2,0,1,1,1,0,0,1,1,0,1
+Imane Zahra,28,F,12,1,0,0,0,0,0,1,2,0,1
+Tariq Berrada,68,M,10,1,0,1,0,0,0,0,1,0,1
+Rachid Benali,31,F,9,1,1,0,0,1,1,0,0,1,1
+Layla El Fassi,37,F,8,1,0,0,0,1,0,1,2,0,1
+Amina Idrissi,67,M,4,0,0,1,1,0,1,0,2,0,1
+Layla Bouaziz,4,F,0,1,1,0,1,0,1,0,0,1,1
+Nadia El Ouahabi,19,M,0,1,1,0,1,1,0,0,0,0,1
+Hassan Saidi,78,F,1,1,0,1,0,0,0,1,1,1,1
+Omar Bennani,64,M,10,0,0,1,1,0,1,0,1,0,1
+Omar Saidi,47,M,8,0,1,1,0,1,1,1,1,0,1
+Omar Bouaziz,31,M,12,1,0,0,1,1,0,1,2,0,1
+Fatima El Ouahabi,18,M,11,1,0,1,0,0,0,0,0,0,1
+Salma Berrada,70,F,4,0,0,1,1,0,1,1,0,0,1
+Salma Idrissi,57,F,5,0,1,1,1,1,0,1,0,1,1
+Fatima Saidi,38,F,1,0,1,1,1,1,1,0,1,0,1
+Sara Idrissi,46,F,4,0,0,1,1,0,0,0,2,1,1
+Layla El Amrani,17,M,3,1,1,1,0,0,1,1,0,1,1
+Mariam Zahra,68,F,6,1,1,0,0,0,0,1,1,1,1
+Amina Alaoui,34,F,3,1,1,0,0,0,0,1,0,1,1
+Omar El Ouahabi,41,F,11,0,1,1,0,0,1,0,0,0,1
+Hassan Kettani,64,M,5,1,1,0,0,0,1,1,2,1,1
+Hiba Cherkaoui,53,M,2,1,0,1,1,1,0,0,1,0,1
+Hiba Berrada,8,M,8,0,1,0,0,1,0,1,2,0,1
+Imane Berrada,11,F,3,1,0,1,0,0,0,0,1,1,1
+Ilyas Bouaziz,73,M,0,0,0,1,0,1,0,1,2,0,1
+Imane El Fassi,32,F,4,1,0,0,0,1,1,1,0,0,1
+Hassan Bouaziz,41,F,6,0,1,0,1,0,1,0,0,0,0
+Amina El Amrani,38,F,9,1,0,0,1,1,0,0,0,0,1
+Anas Alaoui,64,M,1,1,1,0,0,1,0,0,0,0,1
+Anas Alaoui,69,M,1,1,0,1,1,1,1,0,0,0,1
+Khalid Bouaziz,71,F,1,1,1,1,0,0,0,1,0,1,1
+Tariq Bouaziz,19,M,9,1,0,0,0,0,1,1,1,0,1
+Hiba Zahra,42,F,2,1,1,1,1,1,1,0,0,1,1
+Yasin Najjar,40,M,9,1,1,0,0,1,0,1,0,1,1
+Sara Najjar,15,M,0,1,1,1,0,1,0,1,1,1,1
+Anas Berrada,8,M,8,0,1,1,1,1,0,1,2,0,1
+Rachid Benali,83,F,9,1,0,0,1,1,0,1,1,1,1
+Anas Bouaziz,62,F,8,1,1,0,1,1,1,0,0,0,1
+Omar Bouaziz,57,F,11,1,0,0,1,1,0,0,1,0,1
+Zineb El Amrani,68,M,10,0,0,0,1,1,1,0,1,0,1
+Tariq Zahra,53,F,7,0,1,1,1,0,0,0,1,1,1
+Sara Zahra,54,M,0,1,1,0,1,0,0,1,1,0,1
+Nadia Alaoui,59,F,2,1,1,0,0,1,0,1,1,1,1
+Youssef Idrissi,44,F,9,0,0,1,1,1,0,1,1,0,1
+Hassan El Fassi,42,M,0,1,1,0,1,1,1,1,1,0,1
+Mehdi Benali,47,M,0,0,1,1,0,1,1,0,1,1,1
+Rachid Najjar,29,M,2,1,0,1,1,1,1,0,1,1,1
+Ilyas Berrada,11,F,8,1,0,0,0,0,0,0,0,0,0
+Amina Benali,27,F,1,1,0,1,0,1,1,0,1,1,1
+Imane Idrissi,3,F,4,0,0,0,0,1,1,0,1,0,0
+Omar El Fassi,5,F,6,0,0,1,1,1,1,1,0,1,1
+Tariq Zahra,84,F,1,0,1,0,0,0,0,1,0,1,1
+Yasin Saidi,49,M,3,1,1,0,1,0,0,0,2,0,1
+Youssef Kettani,27,M,1,0,1,0,0,0,1,1,0,0,0
+Sara Zahra,65,F,3,1,1,0,1,0,0,1,0,0,1
+Mariam Idrissi,23,F,8,1,0,1,1,1,1,1,0,0,1
+Tariq El Fassi,31,M,4,0,1,0,1,1,0,1,0,0,1
+Omar El Fassi,48,M,8,0,0,1,1,0,0,0,2,0,1
+Tariq Kettani,62,M,5,1,0,0,0,0,1,0,1,1,1
+Salma Kettani,71,F,12,1,1,1,1,1,1,1,1,0,1
+Amina El Ouahabi,61,F,3,1,1,1,0,0,0,0,0,1,1
+Mariam Idrissi,54,F,2,0,1,0,1,0,1,1,0,1,1
+Anas El Fassi,22,F,2,0,1,0,0,0,0,0,1,0,0
+Zineb Bennani,20,M,3,1,1,0,1,1,0,0,1,0,1
+Youssef Saidi,36,F,0,1,0,0,0,0,0,0,1,0,0
+Rachid Alaoui,51,M,5,1,1,0,0,1,0,0,0,0,1
+Tariq El Fassi,8,M,11,0,0,1,1,1,0,0,0,1,1
+Mariam El Fassi,35,M,1,1,0,0,1,0,0,0,1,1,1
+Salma Bennani,39,M,9,0,1,1,1,0,0,1,0,0,1
+Omar Bouaziz,78,F,12,1,0,1,1,1,0,1,1,0,1
+Fatima Benali,75,F,1,1,0,0,0,1,0,1,1,1,1
+Salma Bouaziz,47,M,1,0,1,1,1,1,0,0,0,0,1
+Tariq Saidi,66,F,1,0,0,1,0,1,1,0,0,0,0
+Omar Idrissi,72,M,9,0,1,0,0,1,1,1,0,0,1
+Yasin Alaoui,54,F,7,0,1,1,0,1,0,1,0,0,1
+Salma Bouaziz,80,F,12,1,1,1,1,0,1,1,1,1,1
+Anas Bouaziz,23,F,5,1,1,0,1,1,1,1,0,1,1
+Khalid Najjar,70,M,10,0,1,0,1,1,0,1,1,0,1
+Imane Kettani,33,M,11,1,1,0,1,1,1,1,1,1,1
+Rachid Idrissi,69,M,1,0,1,0,0,1,1,1,0,0,1
+Zineb Saidi,67,M,7,1,1,1,0,1,0,1,0,0,1
+Omar Bennani,19,F,4,1,1,0,1,1,1,0,0,1,1
+Nadia Bennani,39,M,12,0,0,1,0,0,0,0,1,0,1
+Yasin El Fassi,30,F,10,0,0,1,1,0,0,1,1,0,1
+Khalid Kettani,36,M,9,0,0,1,1,0,1,0,0,1,1
+Hiba Benali,41,F,9,1,0,1,1,1,0,1,2,0,1
+Hassan Bouaziz,16,M,4,0,0,1,0,1,1,0,1,0,1
+Anas Benali,69,M,8,0,1,1,0,0,1,1,1,1,1
+Youssef El Fassi,18,M,6,1,1,1,1,1,1,0,0,0,1
+Zineb Alaoui,5,F,3,1,0,1,1,0,0,1,1,1,1
+Rachid Saidi,6,F,8,0,1,0,0,1,0,1,0,1,1
+Omar El Fassi,16,M,3,1,1,0,0,0,0,0,1,0,1
+Ilyas Saidi,22,F,11,1,1,1,0,0,1,0,2,1,1
+Hassan Idrissi,17,M,2,1,0,1,1,0,1,1,0,0,1
+Omar Cherkaoui,66,F,11,1,1,1,1,0,0,1,1,1,1
+Omar El Ouahabi,69,F,3,1,0,1,1,1,1,1,1,0,1
+Anas El Ouahabi,44,M,0,0,1,0,0,0,1,1,0,1,1
+Khalid Idrissi,17,F,2,1,0,1,1,0,1,0,0,1,1
+Zineb Cherkaoui,84,M,11,0,0,0,1,0,0,0,1,0,1
+Youssef Idrissi,44,M,6,0,1,0,0,1,0,0,0,0,0
+Imane Zahra,49,M,10,0,0,0,0,1,1,0,1,0,1
+Yasin Najjar,57,M,1,0,0,0,1,1,1,1,1,0,1
+Omar Kettani,71,F,12,0,1,0,0,1,1,0,1,1,1
+Zineb El Fassi,50,M,3,1,0,0,1,1,0,1,2,0,1
+Rachid Saidi,23,F,12,0,0,0,0,1,0,0,2,1,1
+Salma Saidi,37,F,6,1,0,0,1,0,1,0,1,0,1
+Hassan Saidi,42,F,9,0,1,1,0,0,0,0,2,0,1
+Ilyas Najjar,8,F,10,0,0,0,0,0,0,1,2,0,1
+Mehdi Zahra,48,M,11,1,0,0,1,1,1,0,0,1,1
+Omar El Fassi,59,F,0,1,0,1,0,1,0,0,0,0,0
+Sara Berrada,2,M,0,1,1,1,0,0,0,1,0,0,1
+Nadia Alaoui,10,F,1,0,0,0,0,1,0,1,2,1,1
+Imane Bouaziz,12,F,0,1,0,1,1,0,1,1,1,0,1
+Khalid Idrissi,70,M,2,0,1,0,0,1,0,1,0,1,1
+Imane Bennani,27,M,6,1,0,0,1,0,0,0,2,0,1
+Rachid El Fassi,11,M,8,0,1,0,0,1,0,0,0,1,1
+Salma Idrissi,42,F,7,1,0,0,0,0,0,0,0,0,0
+Nadia Cherkaoui,16,F,12,0,1,1,1,1,0,0,0,1,1
+Ilyas El Amrani,28,F,2,0,0,1,1,0,1,1,2,0,1
+Salma Berrada,58,M,1,1,0,0,0,0,0,0,0,1,0
+Rachid Benali,81,M,9,1,0,0,0,0,1,0,0,1,1
+Nadia Bennani,6,F,0,0,1,1,1,0,1,1,0,0,1
+Fatima Alaoui,36,F,2,0,0,1,1,1,1,0,0,0,1
+Yasin Kettani,83,M,10,0,1,1,1,1,1,1,0,0,1
+Nadia Najjar,29,M,12,1,0,1,1,0,0,0,0,0,1
+Tariq Berrada,8,M,9,1,1,0,0,0,1,1,2,0,1
+Rachid Najjar,73,M,9,0,1,1,0,1,0,0,0,1,1
+Youssef Saidi,62,M,5,0,0,1,0,1,0,0,0,1,1
+Hassan El Ouahabi,15,F,1,1,1,0,1,1,1,0,2,1,1
+Yasin El Ouahabi,82,F,10,1,0,1,0,0,1,1,1,0,1
+Fatima Idrissi,1,F,12,0,0,1,0,0,1,0,0,0,0
+Rachid Bouaziz,22,M,11,1,1,0,1,0,0,0,0,1,1
+Youssef El Amrani,50,F,11,1,0,1,1,1,1,1,0,0,1
+Mariam Benali,29,M,7,0,0,1,0,1,1,0,0,0,1
+Salma Zahra,10,M,5,1,0,1,0,1,0,0,0,0,1
+Khalid Cherkaoui,71,F,10,1,1,0,0,0,1,1,0,0,1
+Yasin Bennani,38,F,3,0,0,0,0,1,0,1,2,0,1
+Salma El Fassi,63,F,1,1,0,1,1,1,0,1,0,0,1
+Mehdi Kettani,35,M,2,0,0,1,1,0,0,1,2,0,1
+Tariq Benali,61,M,7,1,0,1,0,0,0,1,0,1,1
+Khalid El Ouahabi,25,M,0,1,0,1,0,0,1,1,2,1,1
+Omar Bennani,50,F,8,1,1,1,0,1,0,1,0,0,1
+Mariam El Ouahabi,13,M,9,0,1,1,1,1,1,1,1,0,1
+Fatima Alaoui,52,M,9,1,0,1,1,0,0,1,2,1,1
+Youssef Bouaziz,39,F,4,1,0,0,0,1,1,1,0,0,1
+Omar Kettani,57,M,6,1,1,0,0,0,1,1,0,1,1
+Mariam El Amrani,23,M,3,0,0,0,1,0,1,0,0,1,0
+Hiba Cherkaoui,82,M,10,0,0,1,1,1,0,1,1,0,1

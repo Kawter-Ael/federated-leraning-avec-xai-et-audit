@@ -1,0 +1,143 @@
+{
+  "project": {
+    "name": "fl-xai-audit-dashboard",
+    "domain": "healthcare",
+    "dataset_name": "pima-diabetes",
+    "disease_name": "diabetes",
+    "condition_name": "diabetes",
+    "positive_label": "Diabetic patient",
+    "negative_label": "Non-diabetic patient",
+    "seed": 42
+  },
+  "data": {
+    "raw_dataset_path": "data/diabetes.csv",
+    "mapping_path": "",
+    "target_column": "Outcome",
+    "positive_class": 1,
+    "negative_classes": [0],
+    "excluded_columns": [],
+    "numeric_columns": [
+      "Pregnancies",
+      "Glucose",
+      "BloodPressure",
+      "SkinThickness",
+      "Insulin",
+      "BMI",
+      "DiabetesPedigreeFunction",
+      "Age"
+    ],
+    "high_missing_threshold": 0.9,
+    "categorical_encoding": {
+      "rare_category_threshold": 100,
+      "unknown_token": "__unknown__",
+      "missing_token": "missing",
+      "rare_replacement": "other"
+    },
+    "test_size": 0.2,
+    "validation_size_within_train": 0.125,
+    "feature_labels": {},
+    "numeric_defaults": {},
+    "fairness_attribute": "Age",
+    "reference_dataset_path": "data/diabetes.csv",
+    "apply_icd9_grouping": false
+  },
+  "federated_learning": {
+    "num_clients": 1,
+    "num_rounds": 5,
+    "min_fit_clients": 1,
+    "min_available_clients": 1,
+    "strategy": "FedAvg",
+    "deployment_mode": "subprocess"
+  },
+  "model": {
+    "family": "pytorch",
+    "type": "neural_network",
+    "task": "binary_classification",
+    "hyperparameters": {
+      "hidden_dims": [128, 64],
+      "dropout": 0.2,
+      "use_batch_norm": false,
+      "batch_size": 256,
+      "learning_rate": 0.001,
+      "weight_decay": 1e-05,
+      "pos_weight_scale": 0.0,
+      "local_epochs": 5,
+      "early_stopping_patience": 0,
+      "optimizer": "adam"
+    }
+  },
+  "embedding_model": {
+    "numeric_input_key": "x_numeric",
+    "categorical_input_key": "x_categorical",
+    "label_key": "y",
+    "schema_metadata_path": "artifacts/data/metadata/preprocessing_metadata.json"
+  },
+  "training": {
+    "default_threshold": 0.5,
+    "threshold_selection_strategy": "f1",
+    "threshold_selection_min_recall": 0.0,
+    "threshold_candidates": [
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9
+    ]
+  },
+  "local_explainability": {
+    "background_size": 5,
+    "sample_size": 3,
+    "nsamples": 20,
+    "top_features": 10,
+    "instance_explanations": 0
+  },
+  "local_rules": {
+    "max_rules": 5,
+    "min_support": 0.05,
+    "min_category_count": 10
+  },
+  "metrics": [
+    "accuracy",
+    "precision",
+    "recall",
+    "f1",
+    "roc_auc",
+    "pr_auc"
+  ],
+  "artifacts": {
+    "root": "artifacts",
+    "models_dir": "artifacts/models",
+    "metrics_dir": "artifacts/metrics",
+    "xai_dir": "artifacts/xai",
+    "audit_dir": "artifacts/audit",
+    "reports_dir": "artifacts/reports"
+  },
+  "data_augmentation": {
+    "enabled": false,
+    "method": "smote",
+    "factor": 1.0,
+    "noise_std": 0.05,
+    "mixup_alpha": 0.2
+  },
+  "logging": {
+    "level": "INFO",
+    "structured": true
+  },
+  "risk_levels": [
+    {"label": "Low risk", "min": 0.0, "max": 0.33},
+    {"label": "Medium risk", "min": 0.33, "max": 0.66},
+    {"label": "High risk", "min": 0.66, "max": 1.01}
+  ]
+}

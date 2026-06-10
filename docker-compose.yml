@@ -1,0 +1,209 @@
+name: ensaj
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: ensaj-mongodb
+    ports:
+      - "${MONGODB_PORT:-27017}:27017"
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - fl-net
+    restart: unless-stopped
+
+  server:
+    # Static FL server — only needed for 'docker' deployment mode.
+    # In 'docker_per_user' mode the client-app spawns its own server subprocess
+    # per training run, so this service is not required.
+    profiles: ["fl"]
+    image: ensaj-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: server
+    container_name: ensaj-server
+    command: python -m server.run_training
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ./config:/app/config:ro
+      - ./data:/app/data:ro
+    environment:
+      PYTHONPATH: /app
+      FL_SERVER_ADDRESS: 0.0.0.0:8080
+      CONFIG_OVERRIDE_JSON: ${CONFIG_OVERRIDE_JSON:-}
+      FL_FORCE_EXIT_ON_COMPLETE: ${FL_FORCE_EXIT_ON_COMPLETE:-0}
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import socket; s=socket.socket(); s.settimeout(2); s.connect(('localhost', 8080)); s.close()\""]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - fl-net
+    restart: unless-stopped
+
+  dashboard:
+    image: ensaj-dashboard
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dashboard
+    container_name: ensaj-dashboard
+    ports:
+      - "${DASHBOARD_PORT:-8501}:8501"
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ./config:/app/config:ro
+      - ./data:/app/data:ro
+    environment:
+      PYTHONPATH: /app
+      MONGODB_URI: ${MONGODB_URI:-mongodb://mongodb:27017}
+      MONGODB_DB_NAME: ${MONGODB_DB_NAME:-ensaj_client_portal}
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - fl-net
+    restart: unless-stopped
+
+  client-app:
+    image: ensaj-client-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: client-app
+    container_name: ensaj-client-app
+    ports:
+      - "${CLIENT_APP_PORT:-8502}:8502"
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ./config:/app/config:ro
+      - ./data:/app/data:ro
+      # Docker socket: allows client-app to spawn per-user FL client containers
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      PYTHONPATH: /app
+      MONGODB_URI: ${MONGODB_URI:-mongodb://mongodb:27017}
+      MONGODB_DB_NAME: ${MONGODB_DB_NAME:-ensaj_client_portal}
+      # docker_per_user: each authenticated client gets their own FL container
+      DEPLOYMENT_MODE: ${DEPLOYMENT_MODE:-docker_per_user}
+      # Name/hostname of this container on fl-net — FL client containers connect here
+      PORTAL_HOSTNAME: ${PORTAL_HOSTNAME:-ensaj-client-app}
+      # Host-side paths for volume mounts passed to spawned FL client containers
+      FL_ARTIFACT_ROOT_HOST: ${FL_ARTIFACT_ROOT_HOST:-./artifacts}
+      FL_DATA_ROOT_HOST: ${FL_DATA_ROOT_HOST:-./data}
+      FL_CONFIG_ROOT_HOST: ${FL_CONFIG_ROOT_HOST:-./config}
+      FL_DOCKER_IMAGE: ${FL_DOCKER_IMAGE:-ensaj-fl-client}
+      FL_DOCKER_NETWORK: ${FL_DOCKER_NETWORK:-ensaj_fl-net}
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - fl-net
+    restart: unless-stopped
+
+  fl-client-1:
+    profiles: ["fl"]
+    image: ensaj-fl-client
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: fl-client
+    container_name: ensaj-fl-client-1
+    command: >
+      python -m client.runtime
+        --client-id client_1
+        --server-address server:8080
+        --artifact-root /app/client-data
+        --max-retries 30
+        --retry-delay 3
+    volumes:
+      - ${FL_ARTIFACT_ROOT_HOST:-./artifacts}/clients/client_1:/app/client-data
+      - ${FL_ARTIFACT_ROOT_HOST:-./artifacts}:/app/global-artifacts
+      - ./config:/app/config:ro
+      - ./data:/app/data:ro
+    environment:
+      PYTHONPATH: /app
+      GLOBAL_ARTIFACT_ROOT: /app/global-artifacts
+    depends_on:
+      server:
+        condition: service_healthy
+    networks:
+      - fl-net
+    restart: "no"
+
+  fl-client-2:
+    profiles: ["fl"]
+    image: ensaj-fl-client
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: fl-client
+    container_name: ensaj-fl-client-2
+    command: >
+      python -m client.runtime
+        --client-id client_2
+        --server-address server:8080
+        --artifact-root /app/client-data
+        --max-retries 30
+        --retry-delay 3
+    volumes:
+      - ${FL_ARTIFACT_ROOT_HOST:-./artifacts}/clients/client_2:/app/client-data
+      - ${FL_ARTIFACT_ROOT_HOST:-./artifacts}:/app/global-artifacts
+      - ./config:/app/config:ro
+      - ./data:/app/data:ro
+    environment:
+      PYTHONPATH: /app
+      GLOBAL_ARTIFACT_ROOT: /app/global-artifacts
+    depends_on:
+      server:
+        condition: service_healthy
+    networks:
+      - fl-net
+    restart: "no"
+
+  fl-client-3:
+    profiles: ["fl"]
+    image: ensaj-fl-client
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: fl-client
+    container_name: ensaj-fl-client-3
+    command: >
+      python -m client.runtime
+        --client-id client_3
+        --server-address server:8080
+        --artifact-root /app/client-data
+        --max-retries 30
+        --retry-delay 3
+    volumes:
+      - ${FL_ARTIFACT_ROOT_HOST:-./artifacts}/clients/client_3:/app/client-data
+      - ${FL_ARTIFACT_ROOT_HOST:-./artifacts}:/app/global-artifacts
+      - ./config:/app/config:ro
+      - ./data:/app/data:ro
+    environment:
+      PYTHONPATH: /app
+      GLOBAL_ARTIFACT_ROOT: /app/global-artifacts
+    depends_on:
+      server:
+        condition: service_healthy
+    networks:
+      - fl-net
+    restart: "no"
+
+networks:
+  fl-net:
+    driver: bridge
+
+volumes:
+  mongodb_data:

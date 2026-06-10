@@ -1,0 +1,5 @@
+outs:
+- md5: bd3789ab1938ac850397de73b2e62b0e
+  size: 23254
+  hash: md5
+  path: diabetes_synthetique.csv

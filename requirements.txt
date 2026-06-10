@@ -1,0 +1,17 @@
+flwr==1.8.0
+numpy==1.26.4
+pandas==2.2.2
+openpyxl==3.1.5
+scikit-learn==1.5.2
+scipy==1.13.1
+shap==0.46.0
+streamlit==1.37.1
+pyyaml==6.0.2
+matplotlib==3.9.2
+seaborn==0.13.2
+torch==2.4.1
+pymongo==4.8.0
+mongomock==4.3.0
+dvc==3.55.2
+imbalanced-learn>=0.12.3
+docker>=7.0.0

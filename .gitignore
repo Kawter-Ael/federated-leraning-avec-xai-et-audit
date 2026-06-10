@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+nul
+
+# Artifacts (generated at runtime, tracked by DVC)
+/artifacts/data/
+/artifacts/models/
+/artifacts/metrics/
+/artifacts/xai/
+/artifacts/audit/
+/artifacts/reports/
+/artifacts/user_runs/
+/artifacts/smoke_clients/
+
+# DVC local cache
+/data/diabetes.csv
+
+# Environment — single .env file (gitignored); commit only .env.example
+.env
+
+# Claude Code local settings
+.claude/

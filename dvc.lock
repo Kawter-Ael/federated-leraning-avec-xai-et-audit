@@ -1,0 +1,133 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python -m shared.run_phase2
+    deps:
+    - path: config/project-config.json
+      hash: md5
+      md5: 7e56b5df4af4aa7310a021bc2a080d14
+      size: 3325
+    - path: data/diabetes.csv
+      hash: md5
+      md5: f2906818eda8fcfc8f8416557ab1e6df
+      size: 23873
+    - path: shared/data_preparation.py
+      hash: md5
+      md5: c8430d3685de28aa08414391956c8fd2
+      size: 20360
+    - path: shared/federated_data.py
+      hash: md5
+      md5: 1484445cef300782b4ab9969f8fdd6a3
+      size: 8020
+    outs:
+    - path: artifacts/data/clients/
+      hash: md5
+      md5: 60a49c47bac20f890bc774ecf23e09fb.dir
+      size: 9573
+      nfiles: 1
+    - path: artifacts/data/metadata/
+      hash: md5
+      md5: 5a266e557d79bbcc188ece9526259cf9.dir
+      size: 3737
+      nfiles: 1
+    - path: artifacts/data/splits/
+      hash: md5
+      md5: 2cc9f03e0d1a966c19c72e6b9f7d8ad9.dir
+      size: 14690
+      nfiles: 3
+  train:
+    cmd: python -m server.run_training
+    deps:
+    - path: artifacts/data/clients/
+      hash: md5
+      md5: 60a49c47bac20f890bc774ecf23e09fb.dir
+      size: 9573
+      nfiles: 1
+    - path: artifacts/data/metadata/
+      hash: md5
+      md5: 5a266e557d79bbcc188ece9526259cf9.dir
+      size: 3737
+      nfiles: 1
+    - path: artifacts/data/splits/
+      hash: md5
+      md5: 2cc9f03e0d1a966c19c72e6b9f7d8ad9.dir
+      size: 14690
+      nfiles: 3
+    - path: client/federated_client.py
+      hash: md5
+      md5: 6d34f36dc0402fa23ed84e402f5b5f03
+      size: 5762
+    - path: server/federated_trainer.py
+      hash: md5
+      md5: 22e78d0e86bd12ed55affa5cda93e12b
+      size: 19026
+    - path: shared/modeling.py
+      hash: md5
+      md5: 6bc8037074c24a9fdb1ab0f5aab3af44
+      size: 12555
+    outs:
+    - path: artifacts/metrics/
+      hash: md5
+      md5: f67392c2742bbdb0f4ea3a8dc8093353.dir
+      size: 54640
+      nfiles: 1
+    - path: artifacts/models/
+      hash: md5
+      md5: 0df2c1f187fe9e86afd15c677784ae10.dir
+      size: 41873
+      nfiles: 1
+  explain:
+    cmd: python -m explainability.shap_explainer
+    deps:
+    - path: artifacts/metrics/
+      hash: md5
+      md5: f67392c2742bbdb0f4ea3a8dc8093353.dir
+      size: 54640
+      nfiles: 1
+    - path: artifacts/models/
+      hash: md5
+      md5: 0df2c1f187fe9e86afd15c677784ae10.dir
+      size: 41873
+      nfiles: 1
+    - path: explainability/shap_explainer.py
+      hash: md5
+      md5: 7a706938c9b1e9d61df095c016ce6bca
+      size: 21448
+    - path: shared/aggregation.py
+      hash: md5
+      md5: 4ceed57575166f71cf81305853700362
+      size: 5607
+    outs:
+    - path: artifacts/xai/
+      hash: md5
+      md5: f50b87b0f03b8080665df44d128e2791.dir
+      size: 8153
+      nfiles: 5
+  audit:
+    cmd: python -m audit.audit_pipeline
+    deps:
+    - path: artifacts/metrics/
+      hash: md5
+      md5: f67392c2742bbdb0f4ea3a8dc8093353.dir
+      size: 54640
+      nfiles: 1
+    - path: artifacts/models/
+      hash: md5
+      md5: 0df2c1f187fe9e86afd15c677784ae10.dir
+      size: 41873
+      nfiles: 1
+    - path: artifacts/xai/
+      hash: md5
+      md5: f50b87b0f03b8080665df44d128e2791.dir
+      size: 8153
+      nfiles: 5
+    - path: audit/audit_pipeline.py
+      hash: md5
+      md5: 0684fff68343fde0a021a54d1ffdb4ac
+      size: 22082
+    outs:
+    - path: artifacts/audit/
+      hash: md5
+      md5: cbba3ee94292c5392ce3fc7796fa5064.dir
+      size: 13186
+      nfiles: 4

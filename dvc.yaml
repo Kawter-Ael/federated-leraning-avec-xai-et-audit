@@ -1,0 +1,45 @@
+stages:
+  prepare:
+    cmd: python -m shared.run_phase2
+    deps:
+      - data/diabetes.csv
+      - config/project-config.json
+      - shared/data_preparation.py
+      - shared/federated_data.py
+    outs:
+      - artifacts/data/splits/
+      - artifacts/data/clients/
+      - artifacts/data/metadata/
+
+  train:
+    cmd: python -m server.run_training
+    deps:
+      - artifacts/data/splits/
+      - artifacts/data/clients/
+      - artifacts/data/metadata/
+      - shared/modeling.py
+      - server/federated_trainer.py
+      - client/federated_client.py
+    outs:
+      - artifacts/models/
+      - artifacts/metrics/
+
+  explain:
+    cmd: python -m explainability.shap_explainer
+    deps:
+      - artifacts/models/
+      - artifacts/metrics/
+      - explainability/shap_explainer.py
+      - shared/aggregation.py
+    outs:
+      - artifacts/xai/
+
+  audit:
+    cmd: python -m audit.audit_pipeline
+    deps:
+      - artifacts/xai/
+      - artifacts/metrics/
+      - artifacts/models/
+      - audit/audit_pipeline.py
+    outs:
+      - artifacts/audit/
